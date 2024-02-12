@@ -14,7 +14,7 @@ services:
     ports:
       - 3306:3306
 
-  prestashop:
+  cpshop:
     container_name: cpshop
     image: prestashop/prestashop:latest
     build: 
