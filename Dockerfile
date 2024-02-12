@@ -1,5 +1,7 @@
 FROM prestashop/prestashop:latest
 
+WORKDIR /var/www/html
+
 # Expose port 443
 RUN echo "Exposing port 443..."
 EXPOSE 443
