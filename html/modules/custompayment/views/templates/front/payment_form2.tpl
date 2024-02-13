@@ -12,13 +12,15 @@
     </div>
 {/if}
 
-<p>
-    <img src="https://www.i-pic.info/i/LsBi651476.png" alt="QR Code" style="width: 400px; height: auto;">
+<p style="margin-bottom: 10px;">
+    <img src="https://www.i-pic.info/i/toYS652631.png" alt="QR Code" style="width: 400px; height: auto;">
+    <br>
+    Store Account Name: นาย สมชาย ใจดี
     <br>
     เมื่อโอนเงินเรียบร้อยแล้ว กรุณาอัพโหลดสลิปการโอนเงิน
 </p>
 
 <form action="{$link->getModuleLink('custompayment', 'validation', [], true)}" method="post" enctype="multipart/form-data">
     <input type="file" name="payment_slip" required>
-    <button type="submit"name="submitPaymentSlip">{l s='Upload Slip' d='Modules.Custompayment'}</button>
+    <button style="background-color: #24b9d7;  border: none; color: white;padding: 5px 15px; margin-bottom: 15px; border-radius: 5px;" type="submit"name="submitPaymentSlip">{l s='Upload Slip' d='Modules.Custompayment'}</button>
 </form>

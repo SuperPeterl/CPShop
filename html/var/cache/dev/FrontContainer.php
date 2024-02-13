@@ -942,6 +942,7 @@ class FrontContainer extends \PrestaShop\PrestaShop\Adapter\Container\LegacyCont
                 42 => 'statsdata',
                 43 => 'ps_facetedsearch',
                 44 => 'custompayment',
+                45 => 'promptpay',
             ],
             'ps_cache_dir' => '/var/www/html/var/cache/dev/',
             'mail_themes_uri' => '/mails/themes',

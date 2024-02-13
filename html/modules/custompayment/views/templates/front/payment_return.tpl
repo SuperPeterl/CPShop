@@ -3,6 +3,6 @@
         {l s='Payment Successful!' d='Modules.Custompayment'}
     </div>
     <div>
-        {l s='ไอ้ควายสำเร็จเเล้ว.' d='Modules.Custompayment'}
+        {l s='Thank you for your order.' d='Modules.Custompayment'}
     </div>
 {/block}

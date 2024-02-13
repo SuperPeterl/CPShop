@@ -1,5 +1,9 @@
 <?php
 
+require_once 'vendor/autoload.php';
+
+use Zxing\QrReader;
+
 class CustomPaymentValidationModuleFrontController extends ModuleFrontController
 {
     public function initContent()
@@ -15,8 +19,16 @@ class CustomPaymentValidationModuleFrontController extends ModuleFrontController
             if (isset($_FILES['payment_slip']) && !empty($_FILES['payment_slip']['name'])) {
                 // Validate the uploaded file (e.g., file type, size, etc.)
                 $validFile = $this->validateFile($_FILES['payment_slip']);
-
                 if ($validFile) {
+                    $validQrcode = $this->validateQrcode($_FILES['payment_slip']);
+                }
+                else 
+                {
+                    $this->errors[] = $this->module->l('Invalid file. Please upload a valid payment slip.');
+                    $validQrcode = false;
+                }
+                //die(var_dump($validQrcode));
+                if ($validFile && $validQrcode) {
                     // Process the payment details and update order status
                     $this->module->validateOrder(
                         $cart->id,
@@ -48,7 +60,8 @@ class CustomPaymentValidationModuleFrontController extends ModuleFrontController
         }
 
         // Set the template for displaying errors
-        $this->setTemplate('module:custompayment/views/templates/front/payment_form.tpl');
+        //$this->setTemplate('module:custompayment/views/templates/front/payment_form.tpl');
+        Tools::redirect('index.php?controller=order&step=3');
     }
 
     // Function to validate the uploaded file
@@ -64,7 +77,17 @@ class CustomPaymentValidationModuleFrontController extends ModuleFrontController
         if (!$imageInfo || !in_array($imageInfo[2], array(IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG))) {
             return false; // Not a valid image file
         }
-
         return true; // File is a valid image
+    }
+
+    private function validateQrcode($file)
+    {
+        if (!isset($file['tmp_name']) || empty($file['tmp_name'])) {
+            return false; // No file uploaded
+        }
+        $qrcode = new QrReader($file['tmp_name']);
+        $qrcode->decode();
+        $result = $qrcode->getResult();
+        return $result;
     }
 }

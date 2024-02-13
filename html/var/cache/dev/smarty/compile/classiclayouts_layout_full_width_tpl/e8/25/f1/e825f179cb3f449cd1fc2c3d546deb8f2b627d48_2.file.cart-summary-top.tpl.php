@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-02-13 18:36:21
+/* Smarty version 4.3.4, created on 2024-02-13 21:02:42
   from '/var/www/html/themes/classic/templates/checkout/_partials/cart-summary-top.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65cb54356687a3_01263875',
+  'unifunc' => 'content_65cb768227f389_88568192',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cb54356687a3_01263875 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65cb768227f389_88568192 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="cart-summary-top js-cart-summary-top">
   <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displayCheckoutSummaryTop'),$_smarty_tpl ) );?>

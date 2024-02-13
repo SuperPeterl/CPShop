@@ -25,18 +25,31 @@
 {extends "customer/_partials/customer-form.tpl"}
 
 {block "form_field"}
+
   {if $field.name === 'password' and $guest_allowed}
-      <p class="form-informations">
-        <span class="font-weight-bold form-informations-title">{l s='Create an account' d='Shop.Theme.Checkout'}</span> <span class="font-italic form-informations-option">{l s='(optional)' d='Shop.Theme.Checkout'}</span>
-        <br>
-        <span class="text-muted form-informations-subtitle">{l s='And save time on your next order!' d='Shop.Theme.Checkout'}</span>
-      </p>
-      
+
   {else}
     {$smarty.block.parent}
   {/if}
 {/block}
 
+
+    <div class="form-group row">
+      <label class="col-md-3 form-control-label" for="invoice_checkbox">
+        {l s='I want to receive invoices' d='Shop.Theme.Actions'}
+      </label>
+      <div class="col-md-6">
+        <input
+          type="checkbox"
+          id="invoice_checkbox"
+          name="invoice_checkbox"
+          class="form-control"
+          value="1"
+          {if isset($fields_values.invoice_checkbox) && $fields_values.invoice_checkbox}checked{/if}
+        >
+      </div>
+
+      
 {block "form_buttons"}
     <button
       class="continue btn btn-primary float-xs-right"

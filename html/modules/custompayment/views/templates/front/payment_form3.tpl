@@ -13,7 +13,7 @@
 {/if}
 
 
-<p>
+<p style="margin-bottom: 10px;">
     Account Number: 0645544205 (พร้อมเพย์)
     <br>
     Account Name: นาย ธนาธร สุขสวัสดิ์
@@ -24,5 +24,5 @@
 
 <form action="{$link->getModuleLink('custompayment', 'validation', [], true)}" method="post" enctype="multipart/form-data">
     <input type="file" name="payment_slip" required>
-    <button type="submit"name="submitPaymentSlip">{l s='Upload Slip' d='Modules.Custompayment'}</button>
+    <button style="background-color: #24b9d7;  border: none; color: white;padding: 5px 15px; margin-bottom: 15px; border-radius: 5px;" type="submit"name="submitPaymentSlip">{l s='Upload Slip' d='Modules.Custompayment'}</button>
 </form>
