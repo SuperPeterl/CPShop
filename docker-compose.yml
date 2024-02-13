@@ -16,7 +16,7 @@ services:
 
   cpshop:
     container_name: cpshop
-    image: prestashop/prestashop:latest
+    image: superpeter/cpshop:latest
     build: 
       context: .
       dockerfile: Dockerfile

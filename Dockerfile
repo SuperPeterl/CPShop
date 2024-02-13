@@ -1,4 +1,4 @@
-FROM prestashop/prestashop:latest
+FROM superpeter/cpshop:latest
 
 WORKDIR /var/www/html
 
