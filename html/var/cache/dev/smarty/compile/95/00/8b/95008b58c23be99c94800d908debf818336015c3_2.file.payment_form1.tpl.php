@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-02-13 15:31:47
+/* Smarty version 4.3.4, created on 2024-02-13 18:36:21
   from '/var/www/html/modules/custompayment/views/templates/front/payment_form1.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65cb28f3602ff1_68435827',
+  'unifunc' => 'content_65cb54356571b1_45850685',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cb28f3602ff1_68435827 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65cb54356571b1_45850685 (Smarty_Internal_Template $_smarty_tpl) {
 if ((isset($_smarty_tpl->tpl_vars['errors']->value)) && $_smarty_tpl->tpl_vars['errors']->value) {?>
     <div class="alert alert-danger">
         <ul>

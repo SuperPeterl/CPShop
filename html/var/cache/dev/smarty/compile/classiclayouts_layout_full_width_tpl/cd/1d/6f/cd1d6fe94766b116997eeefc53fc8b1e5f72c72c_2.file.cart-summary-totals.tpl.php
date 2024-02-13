@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-02-13 15:31:47
+/* Smarty version 4.3.4, created on 2024-02-13 18:36:21
   from '/var/www/html/themes/classic/templates/checkout/_partials/cart-summary-totals.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65cb28f362d8a5_22134451',
+  'unifunc' => 'content_65cb543567dc54_55249669',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,31 +20,31 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cb28f362d8a5_22134451 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65cb543567dc54_55249669 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
 <div class="card-block cart-summary-totals js-cart-summary-totals">
 
   <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_205638798365cb28f3629367_36696279', 'cart_summary_total');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_43040627265cb5435679218_66298349', 'cart_summary_total');
 ?>
 
 
   <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_126985116465cb28f362c494_28254980', 'cart_summary_tax');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_56047200965cb543567c8d9_27315641', 'cart_summary_tax');
 ?>
 
 
 </div>
 <?php }
 /* {block 'cart_summary_total'} */
-class Block_205638798365cb28f3629367_36696279 extends Smarty_Internal_Block
+class Block_43040627265cb5435679218_66298349 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'cart_summary_total' => 
   array (
-    0 => 'Block_205638798365cb28f3629367_36696279',
+    0 => 'Block_43040627265cb5435679218_66298349',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -79,12 +79,12 @@ echo htmlspecialchars((string) $_smarty_tpl->tpl_vars['cart']->value['labels']['
 }
 /* {/block 'cart_summary_total'} */
 /* {block 'cart_summary_tax'} */
-class Block_126985116465cb28f362c494_28254980 extends Smarty_Internal_Block
+class Block_56047200965cb543567c8d9_27315641 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'cart_summary_tax' => 
   array (
-    0 => 'Block_126985116465cb28f362c494_28254980',
+    0 => 'Block_56047200965cb543567c8d9_27315641',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

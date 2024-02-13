@@ -71,8 +71,14 @@ class CheckoutAddressesStepCore extends AbstractCheckoutStep
     public function handleRequest(array $requestParams = [])
     { 
         $this->addressForm->setAction($this->getCheckoutSession()->getCheckoutURL());
-
+        
         if (array_key_exists('use_same_address', $requestParams)) {
+            die(var_dump($requestParams));
+            if (isset($requestParams['phone']) && $requestParams['address1'] == '') {
+                // The value of 'address' key is equal to 'xxx'
+                $requestParams['address1'] = "notenter";
+            }
+            //if (isset($requestParams['']))
             $this->use_same_address = (bool) $requestParams['use_same_address'];
             if (!$this->use_same_address) {
                 $this->setCurrent(true);
@@ -94,9 +100,9 @@ class CheckoutAddressesStepCore extends AbstractCheckoutStep
             'lastname' => $this->getCheckoutSession()->getCustomer()->lastname,
         ]);
 
+
         if (isset($requestParams['saveAddress'])) {
             $saved = $this->addressForm->fillWith($requestParams)->submit();
-            
             if (!$saved) {
                 $this->setCurrent(true);
                 $this->getCheckoutProcess()->setHasErrors(true);
