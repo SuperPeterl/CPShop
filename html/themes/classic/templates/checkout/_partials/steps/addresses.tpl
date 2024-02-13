@@ -32,11 +32,11 @@
       action="{url entity='order' params=['id_address' => $id_address]}"
       data-refresh-url="{url entity='order' params=['ajax' => 1, 'action' => 'addressForm']}"
     >
-
+     <p>
       {if $use_same_address}
         <p>
           {if $cart.is_virtual}
-            {l s='The selected address will be used as your personal address (for invoice).' d='Shop.Theme.Checkout'}
+            {l s='Enter Address if you need invoice.' d='Shop.Theme.Checkout'}
           {else}
             {l s='The selected address will be used both as your personal address (for invoice) and as your delivery address.' d='Shop.Theme.Checkout'}
           {/if}
@@ -62,6 +62,7 @@
             selected    = $id_address_delivery
             type        = "delivery"
             interactive = !$show_delivery_address_form and !$show_invoice_address_form
+            
           }
         </div>
 
@@ -132,6 +133,7 @@
       {/if}
 
     </form>
+
     {hook h='displayAddressSelectorBottom'}
   </div>
 {/block}

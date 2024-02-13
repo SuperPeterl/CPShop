@@ -1,4 +1,6 @@
 {extends file='customer/_partials/address-form.tpl'}
+{l s='am here ' d='Shop.Theme.Actions'}
+
 
 {block name='form_field'}
   {if $field.name eq "alias" and $customer.is_guest}
@@ -20,7 +22,7 @@
 {block name='form_fields' append}
   <input type="hidden" name="saveAddress" value="{$type}">
   {if $type === "delivery"}
-    <div class="form-group row">
+    <div class="form-group row"hidden>
       <div class="col-md-9 col-md-offset-3">
         <input name = "use_same_address" id="use_same_address" type = "checkbox" value = "1" {if $use_same_address} checked {/if}>
         <label for="use_same_address">{l s='Use this address for invoice too' d='Shop.Theme.Checkout'}</label>
@@ -28,6 +30,7 @@
     </div>
   {/if}
 {/block}
+
 
 {block name='form_buttons'}
   {if !$form_has_continue_button}

@@ -87,7 +87,6 @@
         {/block}
 
       {elseif $field.type === 'checkbox'}
-
         {block name='form_field_item_checkbox'}
           <span class="custom-checkbox">
             <label>
