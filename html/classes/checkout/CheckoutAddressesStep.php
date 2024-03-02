@@ -34,8 +34,8 @@ class CheckoutAddressesStepCore extends AbstractCheckoutStep
     private $show_delivery_address_form = false;
     private $show_invoice_address_form = false;
     private $form_has_continue_button = false;
-
     private $logger;
+    private $x = 1;
     /**
      * @param Context $context
      * @param TranslatorInterface $translator
@@ -56,33 +56,54 @@ class CheckoutAddressesStepCore extends AbstractCheckoutStep
                 'use_same_address' => $this->use_same_address,
             ];
         }
-
-
-
-    public function restorePersistedData(array $data)
-    {
-        if (array_key_exists('use_same_address', $data)) {
-            $this->use_same_address = $data['use_same_address'];
-        }
-
-        return $this;
-    }
-
-    public function handleRequest(array $requestParams = [])
-    { 
-        $this->addressForm->setAction($this->getCheckoutSession()->getCheckoutURL());
         
-        if (array_key_exists('use_same_address', $requestParams)) {
-            die(var_dump($requestParams));
-            if (isset($requestParams['phone']) && $requestParams['address1'] == '') {
-                // The value of 'address' key is equal to 'xxx'
-                $requestParams['address1'] = "notenter";
+        
+        
+        public function restorePersistedData(array $data)
+        {
+            if (array_key_exists('use_same_address', $data)) {
+                $this->use_same_address = $data['use_same_address'];
             }
-            //if (isset($requestParams['']))
-            $this->use_same_address = (bool) $requestParams['use_same_address'];
-            if (!$this->use_same_address) {
-                $this->setCurrent(true);
+            
+            return $this;
+        }
+        
+        public function handleRequest(array $requestParams = [])
+        { 
+            $this->addressForm->setAction($this->getCheckoutSession()->getCheckoutURL());
+
+            if($this->isCurrent()){
+                if($this->context->needinvoice){
+                    //$this->smarty->assignGlobal('needinvoice', $_SESSION["needinvoice"]);
+                    //unset($_SESSION["needinvoice"]);
+                    //die(var_dump($this->context->needinvoice));
+                    //die(var_dump($_SESSION));
+                }   
+                else{
+                    //die("needinvoice is false");
+                    $this->setNextStepAsCurrent();
+                    $this->setComplete(true);
+                } 
+            } 
+
+            
+            
+            if (array_key_exists('use_same_address', $requestParams)) {
+                
+
+    
+                // Retrieve parameter from session
+                if (isset($requestParams['phone']) && $requestParams['address1'] == '') {
+                    // The value of 'address' key is equal to 'xxx'
+                    $requestParams['address1'] = "notenter";
+                }
+                $this->use_same_address = (bool) $requestParams['use_same_address'];
+                if (!$this->use_same_address) {
+                    $this->setCurrent(true);
             }
+
+
+
         }
 
         if (isset($requestParams['cancelAddress'])) {
@@ -124,6 +145,9 @@ class CheckoutAddressesStepCore extends AbstractCheckoutStep
                     $this->getCheckoutSession()->setIdAddressInvoice($id_address);
                 }
             }
+
+
+
         } elseif (isset($requestParams['newAddress'])) {
             // while a form is open, do not go to next step
             $this->setCurrent(true);
@@ -137,6 +161,7 @@ class CheckoutAddressesStepCore extends AbstractCheckoutStep
 
             $this->addressForm->fillWith($requestParams);
             $this->form_has_continue_button = $this->use_same_address;
+
         } elseif (isset($requestParams['editAddress'])) {
             // while a form is open, do not go to next step
             $this->setCurrent(true);
@@ -177,6 +202,7 @@ class CheckoutAddressesStepCore extends AbstractCheckoutStep
         }
 
         if (isset($requestParams['confirm-addresses'])) {
+
             if (isset($requestParams['id_address_delivery'])) {
                 $id_address = $requestParams['id_address_delivery'];
 

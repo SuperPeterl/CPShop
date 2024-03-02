@@ -30,9 +30,8 @@ class CheckoutPersonalInformationStepCore extends AbstractCheckoutStep
     protected $template = 'checkout/_partials/steps/personal-information.tpl';
     private $loginForm;
     private $registerForm;
-
     private $show_login_form = false;
-
+    private $formData;
     /**
      * @var bool
      */
@@ -57,9 +56,15 @@ class CheckoutPersonalInformationStepCore extends AbstractCheckoutStep
 
     public function handleRequest(array $requestParameters = [])
     {
+
+        
+        //set if session is started not start it again
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        
         // personal info step is always reachable
         $this->setReachable(true);
-
         $this->registerForm
             ->fillFromCustomer(
                 $this
@@ -67,8 +72,23 @@ class CheckoutPersonalInformationStepCore extends AbstractCheckoutStep
                     ->getCheckoutSession()
                     ->getCustomer()
             );
-
         if (isset($requestParameters['submitCreate'])) {
+            //die(print_r($requestParameters, true));
+            //die(var_dump($requestParameters));
+            //$requestParameters['needinvoic']
+            $_SESSION['x'] = 0;
+            if (isset($requestParameters["needinvoice"])) {;
+                $this->context->needinvoice = 1;
+                //set session variable
+                $_SESSION['needinvoice'] = 1;
+
+            } else {
+                $this->context->needinvoice = 0;
+                //die(var_dump($_SESSION['needinvoice']));
+                $_SESSION['needinvoice'] = 0;
+            }
+
+
             $this->registerForm->fillWith($requestParameters);
             if ($this->registerForm->submit()) {
                 $this->setNextStepAsCurrent();

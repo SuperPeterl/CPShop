@@ -119,7 +119,7 @@ class __TwigTemplate_023905d99b7a93ee4a540388fbdd2ff2 extends Template
 
     ";
             // line 49
-            $this->loadTemplate("@PrestaShop/Admin/Common/Grid/Blocks/grid_actions.html.twig", "@PrestaShop/Admin/Common/Grid/Blocks/grid_actions.html.twig", 49, "433377121")->display(twig_array_merge($context, ["id" => (twig_get_attribute($this->env, $this->source,             // line 50
+            $this->loadTemplate("@PrestaShop/Admin/Common/Grid/Blocks/grid_actions.html.twig", "@PrestaShop/Admin/Common/Grid/Blocks/grid_actions.html.twig", 49, "993978246")->display(twig_array_merge($context, ["id" => (twig_get_attribute($this->env, $this->source,             // line 50
 (isset($context["grid"]) || array_key_exists("grid", $context) ? $context["grid"] : (function () { throw new RuntimeError('Variable "grid" does not exist.', 50, $this->source); })()), "id", [], "any", false, false, false, 50) . "_grid_common_show_query_modal"), "title" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("SQL query", [], "Admin.Global"), "closable" => true, "actions" => [0 => ["type" => "button", "label" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Export to SQL Manager", [], "Admin.Actions"), "value" => "sql_manager", "class" => "btn btn-primary btn-lg btn-sql-submit"]]]));
             // line 74
             echo "  </div>
@@ -231,7 +231,7 @@ class __TwigTemplate_023905d99b7a93ee4a540388fbdd2ff2 extends Template
 
 
 /* @PrestaShop/Admin/Common/Grid/Blocks/grid_actions.html.twig */
-class __TwigTemplate_023905d99b7a93ee4a540388fbdd2ff2___433377121 extends Template
+class __TwigTemplate_023905d99b7a93ee4a540388fbdd2ff2___993978246 extends Template
 {
     private $source;
     private $macros = [];

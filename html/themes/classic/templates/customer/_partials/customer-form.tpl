@@ -27,10 +27,24 @@
     {include file='_partials/form-errors.tpl' errors=$errors['']}
   {/block}
 
+
+
 <form action="{block name='customer_form_actionurl'}{$action}{/block}" id="customer-form" class="js-customer-form" method="post">
-  <div>
+    {block name='needinvoice' }
+        <div class="form-group row">
+          <div class="col-md-9 col-md-offset-3">
+            <input name = "needinvoice" id="needinvoice" type = "checkbox" value = "1" >
+            <label for="needinvoice">{l s='need invoice' d='Shop.Theme.Checkout'}</label>
+          </div>
+        </div>
+    {/block}
+
+  
+
+  <div id = "xform">
     {block "form_fields"}
       {foreach from=$formFields item="field"}
+      {if $field.name == "id_gender"}{continue}{/if}
         {block "form_field"}
           {if $field.type === "password"}
             <div class="field-password-policy">
@@ -45,6 +59,7 @@
     {/block}
   </div>
 
+
   {block name='customer_form_footer'}
     <footer class="form-footer clearfix">
       <input type="hidden" name="submitCreate" value="1">
@@ -58,3 +73,45 @@
 
 </form>
 {/block}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  
+    var checkbox = document.getElementById("needinvoice");
+    var form = document.getElementById("xform");
+    var checkbox1 = document.querySelector('input[name="psgdpr"]');
+    var checkbox2 = document.querySelector('input[name="customer_privacy"]');
+    var f1 = document.querySelector('input[name="firstname"]');
+    var l1 = document.querySelector('input[name="lastname"]');
+    var e1 = document.querySelector('input[name="email"]');
+
+    // Hide the form initially
+    form.style.display = "none";
+    checkbox1.checked = true;
+    checkbox2.checked = true;
+    f1.value = "quest";
+    l1.value = "quest";
+    e1.value = "quest@gmail.com";
+
+    // Add event listener to the checkbox
+    checkbox.addEventListener("change", function() {
+        if (checkbox.checked) {
+            // If checkbox is checked, show the form
+            form.style.display = "block";
+            checkbox1.checked = false;
+            checkbox2.checked = false;
+            f1.value = "";
+            l1.value = "";
+            e1.value = "";
+        } else {
+            // If checkbox is unchecked, hide the form
+            form.style.display = "none";
+            checkbox1.checked = true;
+            checkbox2.checked = true;
+            f1.value = "quest";
+            l1.value = "quest";
+            e1.value = "quest@gmail.com";
+        }
+    });
+});
+</script>

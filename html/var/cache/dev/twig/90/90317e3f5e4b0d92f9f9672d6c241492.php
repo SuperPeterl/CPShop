@@ -43,7 +43,7 @@ class __TwigTemplate_7e05a68a329a1009fb4c41a912580c10 extends Template
         echo "
 ";
         // line 26
-        $this->loadTemplate("@PrestaShop/Admin/Sell/Order/Order/Blocks/change_orders_status_modal.html.twig", "@PrestaShop/Admin/Sell/Order/Order/Blocks/change_orders_status_modal.html.twig", 26, "1562016625")->display(twig_array_merge($context, ["id" => "changeOrdersStatusModal", "title" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Choose an order status", [], "Admin.Orderscustomers.Feature"), "closable" => true, "actions" => [0 => ["type" => "button", "label" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Update status", [], "Admin.Orderscustomers.Feature"), "class" => "btn btn-primary btn-lg js-submit-modal-form-btn"]]]));
+        $this->loadTemplate("@PrestaShop/Admin/Sell/Order/Order/Blocks/change_orders_status_modal.html.twig", "@PrestaShop/Admin/Sell/Order/Order/Blocks/change_orders_status_modal.html.twig", 26, "1657935605")->display(twig_array_merge($context, ["id" => "changeOrdersStatusModal", "title" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Choose an order status", [], "Admin.Orderscustomers.Feature"), "closable" => true, "actions" => [0 => ["type" => "button", "label" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Update status", [], "Admin.Orderscustomers.Feature"), "class" => "btn btn-primary btn-lg js-submit-modal-form-btn"]]]));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -131,7 +131,7 @@ class __TwigTemplate_7e05a68a329a1009fb4c41a912580c10 extends Template
 
 
 /* @PrestaShop/Admin/Sell/Order/Order/Blocks/change_orders_status_modal.html.twig */
-class __TwigTemplate_7e05a68a329a1009fb4c41a912580c10___1562016625 extends Template
+class __TwigTemplate_7e05a68a329a1009fb4c41a912580c10___1657935605 extends Template
 {
     private $source;
     private $macros = [];

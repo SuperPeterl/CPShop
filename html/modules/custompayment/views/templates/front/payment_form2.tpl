@@ -1,5 +1,6 @@
 <p>
-    {l s='V101:' d='Modules.Custompayment'}
+    {l s=' ' d='Modules.Custompayment'}
+    <!--{l s='V101:' d='Modules.Custompayment'}-->
 </p>
 
 {if isset($errors) && $errors}
@@ -13,7 +14,7 @@
 {/if}
 
 <p style="margin-bottom: 10px;">
-    <img src="https://www.i-pic.info/i/toYS652631.png" alt="QR Code" style="width: 400px; height: auto;">
+    <img src="https://promptpay.io/0645544205.png" alt="QR Code" style="width: 400px; height: auto;">
     <br>
     Store Account Name: นาย สมชาย ใจดี
     <br>

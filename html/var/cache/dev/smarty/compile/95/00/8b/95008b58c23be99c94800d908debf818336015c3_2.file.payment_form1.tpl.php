@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-02-13 21:02:42
+/* Smarty version 4.3.4, created on 2024-02-28 01:29:14
   from '/var/www/html/modules/custompayment/views/templates/front/payment_form1.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65cb768226dac0_75929909',
+  'unifunc' => 'content_65de29fa0047c2_36329919',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,24 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cb768226dac0_75929909 (Smarty_Internal_Template $_smarty_tpl) {
-if ((isset($_smarty_tpl->tpl_vars['errors']->value)) && $_smarty_tpl->tpl_vars['errors']->value) {?>
-    <div class="alert alert-danger">
-        <ul>
-            <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['errors']->value, 'error');
-$_smarty_tpl->tpl_vars['error']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['error']->value) {
-$_smarty_tpl->tpl_vars['error']->do_else = false;
+function content_65de29fa0047c2_36329919 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-                <li><?php echo htmlspecialchars((string) $_smarty_tpl->tpl_vars['error']->value, ENT_QUOTES, 'UTF-8');?>
-</li>
-            <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-        </ul>
-    </div>
-<?php }?>
 
 <p style="margin-bottom: 10px;">
     Store Account Number: 06455442xxxxx (Kasikorn Bank)
@@ -46,7 +30,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <br>
     Store Account Type: Savings
     <br>
-    Store Account Branch: สาขา สุราษฎร์ธานี
+    Store Account Branch: สาขา เซ็นทรัลขอนแก่น
     <br>
     เมื่อโอนเงินเรียบร้อยแล้ว กรุณาอัพโหลดสลิปการโอนเงิน
 </p>

@@ -36,7 +36,13 @@ services:
       - prestashop_network
     volumes:
       - psdata:/var/www/html
-
+      - ./html/modules:/var/www/html/modules
+      - ./html/themes:/var/www/html/themes
+      - ./html/classes:/var/www/html/classes
+      - ./html/controllers:/var/www/html/controllers
+      - ./html/pdf:/var/www/html/pdf
+      - ./html/tools:/var/www/html/tools
+      - ./html/images:/var/www/html/images
 
   phpmyadmin:
       image: phpmyadmin/phpmyadmin
@@ -56,5 +62,5 @@ services:
 networks:
   prestashop_network:
 volumes:
-  psdata:
   dbdata:
+  psdata:

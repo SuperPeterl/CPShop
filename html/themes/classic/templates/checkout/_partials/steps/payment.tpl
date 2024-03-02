@@ -13,6 +13,7 @@
   </p>
   {/if}
 
+  
   {if $is_free}
     <p class="cart-payment-step-not-needed-info">{l s='No payment needed for this order' d='Shop.Theme.Checkout'}</p>
   {/if}
@@ -155,4 +156,10 @@
   </div>
 
   {hook h='displayPaymentByBinaries'}
+  {if ($smarty.session.x)}
+    
+    <script>
+      alert("Please upload vaildate slip");
+    </script>
+  {/if}
 {/block}

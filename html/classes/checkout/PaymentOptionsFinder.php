@@ -37,7 +37,7 @@ class PaymentOptionsFinderCore extends HookFinder
      * @see HookFinder::find()
      */
     public function find() //getPaymentOptions()
-    {
+    {   
         // Payment options coming from intermediate, deprecated version of the Advanced API
         $this->hookName = 'displayPaymentEU';
         $rawDisplayPaymentEUOptions = parent::find();

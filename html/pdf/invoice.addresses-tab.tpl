@@ -23,13 +23,18 @@
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  *}
 <table id="addresses-tab" cellspacing="0" cellpadding="0">
+	
 	<tr>
-		<td width="50%">{if $delivery_address}<span class="bold">{l s='Delivery address' d='Shop.Pdf' pdf='true'}</span><br/><br/>
-				{$delivery_address}
-			{/if}
-		</td>
-		<td width="50%"><span class="bold">{l s='Billing address' d='Shop.Pdf' pdf='true'}</span><br/><br/>
-				{$invoice_address}
-		</td>
-	</tr>
+        <td width="50%"><span class="bold">{l s='PunPun Store' d='Shop.Pdf' pdf='true'}</span><br/><br/>
+            <tr width="20%">{l s='123 Vidhayavibaj Building,' d='Shop.Pdf' pdf='true'}</tr><br>
+            <tr width="20%">{l s='Mitraparp road Muang District,' d='Shop.Pdf' pdf='true'}</tr><br>
+            <tr width="20%">{l s='Khon Kaen 40002' d='Shop.Pdf' pdf='true'}</tr><br>
+			<tr width="20%">{l s='Tel : 0899999999' d='Shop.Pdf' pdf='true'}</tr><br>
+            <tr width="20%">{l s='VAT No. : 1092300098712' d='Shop.Pdf' pdf='true'}</tr>
+        </td>
+
+        <td width="50%"><span class="bold">{l s='Customer' d='Shop.Pdf' pdf='true'}</span><br/><br/>
+            {$invoice_address}
+        </td>
+    </tr>
 </table>

@@ -212,7 +212,8 @@ class OrderConfirmationControllerCore extends FrontController
     public function initContent()
     {
         parent::initContent();
-
+        
+        //die(var_dump($this->context));
         $this->context->smarty->assign([
             'HOOK_ORDER_CONFIRMATION' => $this->displayOrderConfirmation($this->order),
             'HOOK_PAYMENT_RETURN' => $this->displayPaymentReturn($this->order),
@@ -223,6 +224,7 @@ class OrderConfirmationControllerCore extends FrontController
         $this->setTemplate('checkout/order-confirmation');
 
         // If logged in guest we clear the cookie for security reasons
+        unset($_SESSION["needinvoice"]);
         if ($this->context->customer->is_guest) {
             $this->context->customer->mylogout();
         }

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-02-13 18:35:20
+/* Smarty version 4.3.4, created on 2024-02-28 01:29:14
   from '/var/www/html/themes/classic/templates/checkout/_partials/steps/payment.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65cb53f8079be5_22747740',
+  'unifunc' => 'content_65de29faa75278_17399106',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,25 +21,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:checkout/_partials/order-final-summary.tpl' => 1,
   ),
 ),false)) {
-function content_65cb53f8079be5_22747740 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65de29faa75278_17399106 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_181450781665cb53f806c762_78763389', 'step_content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_77722867065de29faa61ff2_01319634', 'step_content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'checkout/_partials/steps/checkout-step.tpl');
 }
 /* {block 'step_content'} */
-class Block_181450781665cb53f806c762_78763389 extends Smarty_Internal_Block
+class Block_77722867065de29faa61ff2_01319634 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'step_content' => 
   array (
-    0 => 'Block_181450781665cb53f806c762_78763389',
+    0 => 'Block_77722867065de29faa61ff2_01319634',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -59,6 +59,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/vendor/smarty/
   </p>
   <?php }?>
 
+  
   <?php if ($_smarty_tpl->tpl_vars['is_free']->value) {?>
     <p class="cart-payment-step-not-needed-info"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'No payment needed for this order','d'=>'Shop.Theme.Checkout'),$_smarty_tpl ) );?>
 </p>
@@ -250,7 +251,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
   <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displayPaymentByBinaries'),$_smarty_tpl ) );?>
 
-<?php
+  <?php if (($_SESSION['x'])) {?>
+    
+    <?php echo '<script'; ?>
+>
+      alert("Please upload vaildate slip");
+    <?php echo '</script'; ?>
+>
+  <?php }
 }
 }
 /* {/block 'step_content'} */

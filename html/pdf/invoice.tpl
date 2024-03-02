@@ -41,13 +41,6 @@
 	</tr>
 
 	<!-- TVA Info -->
-	<tr>
-		<td colspan="12">
-
-			{$summary_tab}
-
-		</td>
-	</tr>
 
 	<tr>
 		<td colspan="12" height="20">&nbsp;</td>
@@ -91,7 +84,7 @@
 
 	<tr>
 		<td colspan="6" class="left">
-
+			
 			{$payment_tab}
 
 		</td>

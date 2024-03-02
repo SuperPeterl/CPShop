@@ -12,9 +12,9 @@ class CustomPaymentValidationModuleFrontController extends ModuleFrontController
 
         $context = Context::getContext();
         $cart = $context->cart;
-
         // Check if the form was submitted
         if (Tools::isSubmit('submitPaymentSlip')) {
+            //die(var_dump($this->module));
             // Check if a file was uploaded
             if (isset($_FILES['payment_slip']) && !empty($_FILES['payment_slip']['name'])) {
                 // Validate the uploaded file (e.g., file type, size, etc.)
@@ -24,7 +24,6 @@ class CustomPaymentValidationModuleFrontController extends ModuleFrontController
                 }
                 else 
                 {
-                    $this->errors[] = $this->module->l('Invalid file. Please upload a valid payment slip.');
                     $validQrcode = false;
                 }
                 //die(var_dump($validQrcode));
@@ -48,20 +47,23 @@ class CustomPaymentValidationModuleFrontController extends ModuleFrontController
                     Tools::redirect('index.php?controller=order&step=1');
                     }
                     // Redirect back to the payment form
+                    session_start();
+                    $_SESSION['x'] = 0;
                     Tools::redirect('index.php?controller=order-confirmation&id_cart=' . $cart->id . '&id_module=' . $this->module->id . '&id_order=' . $this->module->currentOrder . '&key=' . $customer->secure_key);
                    // Tools::redirect($context->link->getPageLink('order-confirmation', true));
                     return;
                 } else {
-                    $this->errors[] = $this->module->l('Invalid file. Please upload a valid payment slip.');
+                    session_start();
+                    $_SESSION['x'] = 1;
+
                 }
-            } else {
-                $this->errors[] = $this->module->l('Please upload a payment slip.');
             }
         }
-
+        
+        Tools::redirect('index.php?controller=order&step=3');
         // Set the template for displaying errors
         //$this->setTemplate('module:custompayment/views/templates/front/payment_form.tpl');
-        Tools::redirect('index.php?controller=order&step=3');
+        //C;
     }
 
     // Function to validate the uploaded file

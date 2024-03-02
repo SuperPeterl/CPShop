@@ -30,22 +30,25 @@
   {/if}
   <thead>
   <tr>
+    {**
     <th class="product header small" width="{$layout.reference.width}%">{l s='Reference' d='Shop.Pdf' pdf='true'}</th>
-    <th class="product header small" width="{$widthColProduct}%">{l s='Product' d='Shop.Pdf' pdf='true'}</th>
+    *}
+
+    <th class="product header small" width="20%">{l s='Product' d='Shop.Pdf' pdf='true'}</th>
     {if $isTaxEnabled}
-      <th class="product header small" width="{$layout.tax_code.width}%">{l s='Tax Rate' d='Shop.Pdf' pdf='true'}</th>
+      <th class="product header small" width="20%">{l s='Tax Rate' d='Shop.Pdf' pdf='true'}</th>
     {/if}
     {if isset($layout.before_discount)}
-      <th class="product header small" width="{$layout.unit_price_tax_excl.width}%">
+      <th class="product header small" width="20%">
         {l s='Base price' d='Shop.Pdf' pdf='true'}{if $isTaxEnabled}<br /> {l s='(Tax excl.)' d='Shop.Pdf' pdf='true'}{/if}
       </th>
     {/if}
 
-    <th class="product header-right small" width="{$layout.unit_price_tax_excl.width}%">
+    <th class="product header-right small" width="20%">
       {l s='Unit Price' d='Shop.Pdf' pdf='true'}{if $isTaxEnabled}<br /> {l s='(Tax excl.)' d='Shop.Pdf' pdf='true'}{/if}
     </th>
-    <th class="product header small" width="{$layout.quantity.width}%">{l s='Qty' d='Shop.Pdf' pdf='true'}</th>
-    <th class="product header-right small" width="{$layout.total_tax_excl.width}%">
+    <th class="product header small" width="20%">{l s='Qty' d='Shop.Pdf' pdf='true'}</th>
+    <th class="product header-right small" width="20%">
       {l s='Total' d='Shop.Pdf' pdf='true'}{if $isTaxEnabled}<br /> {l s='(Tax excl.)' d='Shop.Pdf' pdf='true'}{/if}
     </th>
   </tr>
@@ -57,21 +60,28 @@
   {foreach $order_details as $order_detail}
     {cycle values=["color_line_even", "color_line_odd"] assign=bgcolor_class}
     <tr class="product {$bgcolor_class}">
-
+    
+      {** Edited
       <td class="product center">
         {$order_detail.product_reference}
       </td>
+      *}
+      
       <td class="product left">
         {if $display_product_images}
           <table width="100%">
             <tr>
+
+            {** Edited
               <td width="15%">
                 {if isset($order_detail.image) && $order_detail.image->id}
                   {$order_detail.image_tag}
                 {/if}
               </td>
               <td width="5%">&nbsp;</td>
-              <td width="80%">
+            *}
+            
+              <td width="100%">
                 {$order_detail.product_name}
               </td>
             </tr>

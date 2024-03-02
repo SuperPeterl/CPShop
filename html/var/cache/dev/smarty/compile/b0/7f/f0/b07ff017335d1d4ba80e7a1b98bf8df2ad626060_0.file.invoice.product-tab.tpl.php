@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-02-13 18:35:34
+/* Smarty version 4.3.4, created on 2024-02-28 01:17:17
   from '/var/www/html/pdf/invoice.product-tab.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65cb5406e2d030_00628665',
+  'unifunc' => 'content_65de272d6af1a2_36801721',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b07ff017335d1d4ba80e7a1b98bf8df2ad626060' => 
     array (
       0 => '/var/www/html/pdf/invoice.product-tab.tpl',
-      1 => 1702479318,
+      1 => 1708967019,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cb5406e2d030_00628665 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65de272d6af1a2_36801721 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/vendor/smarty/smarty/libs/plugins/function.cycle.php','function'=>'smarty_function_cycle',),));
 ?>
 <table class="product" width="100%" cellpadding="4" cellspacing="0">
@@ -31,37 +31,29 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/vendor/smarty/
   <?php }?>
   <thead>
   <tr>
-    <th class="product header small" width="<?php echo $_smarty_tpl->tpl_vars['layout']->value['reference']['width'];?>
-%"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Reference','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );?>
-</th>
-    <th class="product header small" width="<?php echo $_smarty_tpl->tpl_vars['widthColProduct']->value;?>
-%"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Product','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );?>
+    
+    <th class="product header small" width="20%"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Product','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );?>
 </th>
     <?php if ($_smarty_tpl->tpl_vars['isTaxEnabled']->value) {?>
-      <th class="product header small" width="<?php echo $_smarty_tpl->tpl_vars['layout']->value['tax_code']['width'];?>
-%"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Tax Rate','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );?>
+      <th class="product header small" width="20%"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Tax Rate','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );?>
 </th>
     <?php }?>
     <?php if ((isset($_smarty_tpl->tpl_vars['layout']->value['before_discount']))) {?>
-      <th class="product header small" width="<?php echo $_smarty_tpl->tpl_vars['layout']->value['unit_price_tax_excl']['width'];?>
-%">
+      <th class="product header small" width="20%">
         <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Base price','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );
 if ($_smarty_tpl->tpl_vars['isTaxEnabled']->value) {?><br /> <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'(Tax excl.)','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );
 }?>
       </th>
     <?php }?>
 
-    <th class="product header-right small" width="<?php echo $_smarty_tpl->tpl_vars['layout']->value['unit_price_tax_excl']['width'];?>
-%">
+    <th class="product header-right small" width="20%">
       <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Unit Price','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );
 if ($_smarty_tpl->tpl_vars['isTaxEnabled']->value) {?><br /> <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'(Tax excl.)','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );
 }?>
     </th>
-    <th class="product header small" width="<?php echo $_smarty_tpl->tpl_vars['layout']->value['quantity']['width'];?>
-%"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Qty','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );?>
+    <th class="product header small" width="20%"><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Qty','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );?>
 </th>
-    <th class="product header-right small" width="<?php echo $_smarty_tpl->tpl_vars['layout']->value['total_tax_excl']['width'];?>
-%">
+    <th class="product header-right small" width="20%">
       <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Total','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );
 if ($_smarty_tpl->tpl_vars['isTaxEnabled']->value) {?><br /> <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'(Tax excl.)','d'=>'Shop.Pdf','pdf'=>'true'),$_smarty_tpl ) );
 }?>
@@ -82,23 +74,15 @@ $_smarty_tpl->tpl_vars['order_detail']->do_else = false;
 
     <tr class="product <?php echo $_smarty_tpl->tpl_vars['bgcolor_class']->value;?>
 ">
-
-      <td class="product center">
-        <?php echo $_smarty_tpl->tpl_vars['order_detail']->value['product_reference'];?>
-
-      </td>
+    
+            
       <td class="product left">
         <?php if ($_smarty_tpl->tpl_vars['display_product_images']->value) {?>
           <table width="100%">
             <tr>
-              <td width="15%">
-                <?php if ((isset($_smarty_tpl->tpl_vars['order_detail']->value['image'])) && $_smarty_tpl->tpl_vars['order_detail']->value['image']->id) {?>
-                  <?php echo $_smarty_tpl->tpl_vars['order_detail']->value['image_tag'];?>
 
-                <?php }?>
-              </td>
-              <td width="5%">&nbsp;</td>
-              <td width="80%">
+                        
+              <td width="100%">
                 <?php echo $_smarty_tpl->tpl_vars['order_detail']->value['product_name'];?>
 
               </td>

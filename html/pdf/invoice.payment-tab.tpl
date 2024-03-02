@@ -22,6 +22,8 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  *}
+
+ {** Edited
 <table id="payment-tab" width="100%">
 	<tr>
 		<td class="payment center small grey bold" width="44%">{l s='Payment Method' d='Shop.Pdf' pdf='true'}</td>
@@ -37,3 +39,4 @@
 		</td>
 	</tr>
 </table>
+*}

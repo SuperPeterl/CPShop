@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-02-13 21:02:42
+/* Smarty version 4.3.4, created on 2024-02-28 01:29:14
   from '/var/www/html/modules/custompayment/views/templates/front/payment_form4.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65cb7682277719_03309178',
+  'unifunc' => 'content_65de29fa770196_69649553',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'de870fbca73aea109599d6be4a89ea013f1a3081' => 
     array (
       0 => '/var/www/html/modules/custompayment/views/templates/front/payment_form4.tpl',
-      1 => 1707854166,
+      1 => 1707869682,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cb7682277719_03309178 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65de29fa770196_69649553 (Smarty_Internal_Template $_smarty_tpl) {
 ?><p>
-    <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'V101:','d'=>'Modules.Custompayment'),$_smarty_tpl ) );?>
+    <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>' ','d'=>'Modules.Custompayment'),$_smarty_tpl ) );?>
 
 </p>
 
@@ -43,9 +43,33 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </ul>
     </div>
 <?php }?>
-<p style="margin-bottom: 10px;">
-    this is Counter Service
-</p>
+
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"><?php echo '</script'; ?>
+>
+<div class="barcode-container">
+    <svg id="barcode"></svg>
+</div>
+
+<?php echo '<script'; ?>
+>
+    function generateRandomNumber() {
+        const randomDigits = Math.floor(Math.random() * 1000000000000); // 13 digits
+        return randomDigits.toString().padStart(13, '0');
+    }
+
+    const prefix = "885"; // Fixed 3-digit prefix
+    const randomNumber = generateRandomNumber();
+    const barcodeNumber = prefix + randomNumber;
+
+    JsBarcode("#barcode", barcodeNumber, {
+      format: "code128b",
+      displayValue: true,
+      fontSize: 20
+    });
+  <?php echo '</script'; ?>
+>
+
 
 <form action="<?php echo htmlspecialchars((string) $_smarty_tpl->tpl_vars['link']->value->getModuleLink('custompayment','validation',array(),true), ENT_QUOTES, 'UTF-8');?>
 " method="post" enctype="multipart/form-data">

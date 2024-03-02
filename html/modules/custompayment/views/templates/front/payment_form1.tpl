@@ -1,13 +1,4 @@
 
-{if isset($errors) && $errors}
-    <div class="alert alert-danger">
-        <ul>
-            {foreach from=$errors item=error}
-                <li>{$error}</li>
-            {/foreach}
-        </ul>
-    </div>
-{/if}
 
 <p style="margin-bottom: 10px;">
     Store Account Number: 06455442xxxxx (Kasikorn Bank)
@@ -16,7 +7,7 @@
     <br>
     Store Account Type: Savings
     <br>
-    Store Account Branch: สาขา สุราษฎร์ธานี
+    Store Account Branch: สาขา เซ็นทรัลขอนแก่น
     <br>
     เมื่อโอนเงินเรียบร้อยแล้ว กรุณาอัพโหลดสลิปการโอนเงิน
 </p>

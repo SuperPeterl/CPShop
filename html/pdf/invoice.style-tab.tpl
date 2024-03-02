@@ -24,7 +24,7 @@
  *}
 
 {block name="variables"}
-	{assign var=color_header value="#F0F0F0"}
+	{assign var=color_header value="#FFFFFF"}
 	{assign var=color_border value="#000000"}
 	{assign var=color_border_lighter value="#CCCCCC"}
 	{assign var=color_line_even value="#FFFFFF"}
@@ -49,6 +49,8 @@
 		table.product {
 			border: 1px solid {$color_border};
 			border-collapse: collapse;
+			padding: {$table_padding};
+			width: 100%;
 		}
 
 		table#addresses-tab tr td {
@@ -61,7 +63,7 @@
 		}
 		table#total-tab {
 			padding: {$table_padding};
-			border: 1pt solid {$color_border};
+			
 		}
 		table#note-tab {
 			padding: {$table_padding};

@@ -1,5 +1,5 @@
 <p>
-    {l s='V101:' d='Modules.Custompayment'}
+    {l s=' ' d='Modules.Custompayment'}
 </p>
 
 {if isset($errors) && $errors}

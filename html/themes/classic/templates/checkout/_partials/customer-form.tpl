@@ -32,24 +32,7 @@
     {$smarty.block.parent}
   {/if}
 {/block}
-
-
-    <div class="form-group row">
-      <label class="col-md-3 form-control-label" for="invoice_checkbox">
-        {l s='I want to receive invoices' d='Shop.Theme.Actions'}
-      </label>
-      <div class="col-md-6">
-        <input
-          type="checkbox"
-          id="invoice_checkbox"
-          name="invoice_checkbox"
-          class="form-control"
-          value="1"
-          {if isset($fields_values.invoice_checkbox) && $fields_values.invoice_checkbox}checked{/if}
-        >
-      </div>
-
-      
+ 
 {block "form_buttons"}
     <button
       class="continue btn btn-primary float-xs-right"
